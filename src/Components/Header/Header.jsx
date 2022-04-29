@@ -42,6 +42,6 @@
       </header>
     );
   }
-  }
+  } 
 
   export default withRouter(Header);

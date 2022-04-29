@@ -15,8 +15,8 @@ class Home extends Component {
             <HomeUserProfile/>
           </div>
           <div className="col-sm-6">
+        
             <HomeFollow/>
-         
           </div>
         </div>
       </div>
