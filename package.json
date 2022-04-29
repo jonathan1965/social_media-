@@ -1,7 +1,7 @@
 {
-  "name": "socialmedia-template-reactjs-hpdf-task1",
+  "name": "socialmedia",
   "version": "1.0.0",
-  "description": "Social Media Template ReactJS HPDF Task 1",
+  "description": "Social Media",
   "private": false,
   "dependencies": {
     "@material-ui/core": "^4.12.4",
