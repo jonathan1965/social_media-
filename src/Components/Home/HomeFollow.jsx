@@ -32,11 +32,11 @@ class HomeFollow extends Component {
         rightIconButton={<RaisedButton onClick={this.enableEdit} label={this.state.label} variant={"outlined"} style={{margin:'23px'}} primary={true} />}
         primaryText={
           <div className="list-primary-text">
-            <span>{s.name}</span>
+            <span>@{s.name}</span>
           </div>
         }
         secondaryText={
-          <small>@{s.address}</small>
+          <small>{s.address}</small>
         }
         secondaryTextLines={2}
       />
