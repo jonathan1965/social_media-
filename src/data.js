@@ -1,7 +1,7 @@
 window.data = {
   auth: {
     user: {
-      name: "Beyonce West",
+      name: "Beyonce",
       address: "Kigali Rwanda",
       followers: "625",
       following: "189",
