@@ -13,7 +13,7 @@ class HomeUserProfile extends Component {
   }
   render() {
     return (
-      <Paper zDepth={1} className="sidebar-component">
+      <Paper className="sidebar-component">
         <div className="profile-info-banner" style={{backgroundColor:this.props.muiTheme.palette.primary1Color}}></div>
         <Avatar className="profile-avatar" src={this.state.user.avatar} size={72}/>
         <div className="profile-content">

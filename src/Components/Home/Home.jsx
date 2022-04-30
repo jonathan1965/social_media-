@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import HomeUserProfile from './HomeUserProfile'
 import HomeFollow from './HomeFollow'
 
-
 class Home extends Component {
   render() {
     return (
