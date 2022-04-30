@@ -5,7 +5,6 @@ import {List, ListItem, Divider, Avatar} from 'material-ui';
 
 class HomeFollow extends Component {
   constructor(props) {
-
     super(props);
     this.state = {
       suggestions: window.data.auth.suggestions,
