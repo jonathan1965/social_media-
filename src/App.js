@@ -7,15 +7,8 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import './App.css';
 import './css/bootstrap-grid.css';
 import './data'
-const defautTheme = getMuiTheme(lightBaseTheme)
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      theme: defautTheme
-    }
-  }
   render() {
     return (
       <MuiThemeProvider>
