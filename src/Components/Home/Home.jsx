@@ -4,9 +4,6 @@ import HomeFollow from './HomeFollow'
 
 
 class Home extends Component {
-  componentDidMount() {
-    document.title = "Home"
-  }
   render() {
     return (
       <div className="container main-content">
