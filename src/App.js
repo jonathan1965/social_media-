@@ -5,8 +5,10 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import './App.css';
 import './css/bootstrap-grid.css';
 import './data'
+import './follower-suggestions.json'
 
 class App extends Component {
+ 
   render() {
     return (
       <MuiThemeProvider>

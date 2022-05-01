@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Card, CardHeader, CardText, RaisedButton } from 'material-ui';
 import {List, ListItem, Divider, Avatar} from 'material-ui';
+import Group from 'material-ui/svg-icons/social/group-add';
 
 
 class HomeFollow extends Component {
@@ -28,7 +29,7 @@ class HomeFollow extends Component {
     <div key={s.name} className="">
       <ListItem
         leftAvatar={<Avatar src={s.avatar} />}
-        rightIconButton={<RaisedButton onClick={this.enableEdit} label={this.state.label} variant={"outlined"} style={{margin:'23px'}} primary={true} />}
+        rightIconButton={<RaisedButton onClick={this.enableEdit} label={this.state.label} icon={<Group style={{fill:'white' , size:'67'}}/>} variant={"outlined"} style={{margin:'23px'}} primary={true} />}
         primaryText={
           <div className="list-primary-text">
             <span>@{s.name}</span>
