@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Card, CardHeader, CardText, RaisedButton } from 'material-ui';
 import {List, ListItem, Divider, Avatar} from 'material-ui';
-import Group from 'material-ui/svg-icons/social/group-add';
+import Group from 'material-ui/svg-icons/social/person-add';
 
 
 class HomeFollow extends Component {

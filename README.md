@@ -1,8 +1,8 @@
 # Social Media Project
 
 ### Screenshots
-![image](https://user-images.githubusercontent.com/57622276/166146875-71d37d4e-ebde-456b-8ef8-0be50e7c8a0d.png)
-![image](https://user-images.githubusercontent.com/57622276/166146875-71d37d4e-ebde-456b-8ef8-0be50e7c8a0d.png)
+![image](https://user-images.githubusercontent.com/57622276/166147011-62c344c2-5529-48cd-a35a-e0b0ded6a8d6.png)
+![image](https://user-images.githubusercontent.com/57622276/166147011-62c344c2-5529-48cd-a35a-e0b0ded6a8d6.png)
 
 
 ### Install and start
