@@ -28,7 +28,7 @@ class HomeFollow extends Component {
     const listSuggestions = this.state.suggestions.map((s) =>
     <div key={s.name} className="">
       <ListItem
-        leftAvatar={<Avatar src={s.avatar} />}
+        leftAvatar={<Avatar src={s.profilePicture} />}
         rightIconButton={<RaisedButton onClick={this.enableEdit} label={this.state.label} icon={<Group style={{fill:'white' , size:'67'}}/>} variant={"outlined"} style={{margin:'23px'}} primary={true} />}
         primaryText={
           <div className="list-primary-text">
@@ -36,7 +36,9 @@ class HomeFollow extends Component {
           </div>
         }
         secondaryText={
-          <small>{s.address}</small>
+          <small>{s.biography
+          
+          }</small>
         }
         secondaryTextLines={2}
       />

@@ -15,11 +15,11 @@ class HomeUserProfile extends Component {
     return (
       <Paper className="sidebar-component">
         <div className="profile-info-banner" style={{backgroundColor:this.props.muiTheme.palette.primary1Color}}></div>
-        <Avatar className="profile-avatar" src={this.state.user.avatar} size={72}/>
+        <Avatar className="profile-avatar" src={this.state.user.profilePicture} size={72}/>
         <div className="profile-content">
           <center>
             <h2 className="profile-name"><b>{this.state.user.name}</b></h2>
-            <span className="profile-address">@{this.state.user.address}</span>
+            <span className="profile-address">@{this.state.user.biography}</span>
           </center>
           <div className="profile-action">
             <center className="profile-followers">

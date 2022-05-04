@@ -23,7 +23,7 @@
             <FlatButton icon={<IconHome style={{fill:'white'}}/>} label="Home" className="appbar-btn"/>
             <FlatButton icon={<IconNotification  style={{fill:'white'}}/>} label="Notifications" className="appbar-btn"/>
             <FlatButton icon={<IconMail style={{fill:'white'}}/>} label="Messages" className="appbar-btn"/>
-            <IconMenu className="pull-right" iconButtonElement={<IconButton className="appbar-btn"><Avatar src={this.state.user.avatar} /></IconButton>}>
+            <IconMenu className="pull-right" iconButtonElement={<IconButton className="appbar-btn"><Avatar src={this.state.user.profilePicture} /></IconButton>}>
           </IconMenu>
           <IconButton className="pull-right" style={{top:'15px'}} ><IconSearch className="appbar-btn"/></IconButton>
         </div>
