@@ -1,47 +1,87 @@
-  import React, { Component } from 'react';
-  import { withRouter, Link } from 'react-router-dom';
-  import {AppBar, FlatButton, IconButton, IconMenu, Avatar} from 'material-ui';
-  import IconHome from 'material-ui/svg-icons/action/home';
-  import IconNotification from 'material-ui/svg-icons/social/notifications';
-  import IconMail from 'material-ui/svg-icons/content/mail';
-  import IconSearch from 'material-ui/svg-icons/action/search';
-  import './Header.css'
+import React, { Component } from 'react';
+import { withRouter, Link } from 'react-router-dom';
+import {AppBar, FlatButton, IconButton, IconMenu, MenuItem,Avatar} from 'material-ui';
+import {TextField} from 'material-ui';
+import IconHome from 'material-ui/svg-icons/action/home';
+import IconNotification from 'material-ui/svg-icons/social/notifications';
+import IconMail from 'material-ui/svg-icons/content/mail';
+import IconSearch from 'material-ui/svg-icons/action/search';
+import IconClose from 'material-ui/svg-icons/navigation/close';
+import IconPerson from 'material-ui/svg-icons/social/person';
 
-  class Header extends Component {
-    constructor(props) {
-      super(props);
-      this.state = {
-        user: window.data.auth.user,
-        searchBarClassName: "hidden"
-      }
+import './Header.css'
+
+class Header extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      user: window.data.auth.user,
+      searchBarClassName: "hidden"
     }
-   
-    render() {
-      const mainBar = (
-        <div className="container">
-          <div className="appbar-links">
-            <FlatButton icon={<IconHome style={{fill:'white'}}/>} label="Home" className="appbar-btn"/>
-            <FlatButton icon={<IconNotification  style={{fill:'white'}}/>} label="Notifications" className="appbar-btn"/>
-            <FlatButton icon={<IconMail style={{fill:'white'}}/>} label="Messages" className="appbar-btn"/>
-            <IconMenu className="pull-right" iconButtonElement={<IconButton className="appbar-btn"><Avatar src={this.state.user.profilePicture} /></IconButton>}>
-          </IconMenu>
-          <IconButton className="pull-right" style={{top:'15px'}} ><IconSearch className="appbar-btn"/></IconButton>
-        </div>
-      </div>
-    );
-
-    return (
-      <header>
-        <AppBar
-          id="main-bar"
-          title={mainBar}
-          showMenuIconButton={false}
-          style={{position:'fixed'}}
-        />
-      
-      </header>
-    );
   }
-  } 
+  componentDidMount() {
+    var searchInput = document.getElementById("search-input")
+    searchInput.addEventListener("keyup", function(event) {
+      event.preventDefault();
+      if (event.keyCode === 13) {
+        this.props.history.push("/search/"+searchInput.value);
+      }
+    }.bind(this));
+  }
 
-  export default withRouter(Header);
+  showSearch() {
+    this.setState({searchBarClassName: "animated fadeIn"})
+    setTimeout(function () {
+      this.refs.searchInput.focus();
+    }.bind(this), 500);
+  }
+
+  hideSearch() {
+    this.setState({searchBarClassName: "animated fadeOut"})
+    setTimeout(function () {
+      this.setState({searchBarClassName: "hidden"})
+    }.bind(this), 500);
+  }
+
+  render() {
+    const mainBar = (
+      <div className="container">
+        <div className="appbar-links">
+          <Link><FlatButton icon={<IconHome style={{fill:'white'}}/>} label="Home" className="appbar-btn"/></Link>
+          <Link><FlatButton icon={<IconNotification  style={{fill:'white'}}/>} label="Notifications" className="appbar-btn"/></Link>
+          <Link><FlatButton icon={<IconMail style={{fill:'white'}}/>} label="Messages" className="appbar-btn"/></Link>
+          <IconMenu className="pull-right" iconButtonElement={<IconButton className="appbar-btn"><Avatar src={this.state.user.profilePicture} size={40} /></IconButton>}>
+          <MenuItem primaryText="Add Users" leftIcon={<IconPerson/>}/>
+        </IconMenu>
+        <IconButton className="pull-right" style={{top:'15px'}} onClick={this.showSearch.bind(this)}><IconSearch className="appbar-btn"/></IconButton>
+      </div>
+    </div>
+  );
+
+  const searchBar = (
+    <div className="container">
+      <TextField ref="searchInput" id="search-input" hintText="Type then hit enter to search..."  style={{width: '95%'}} inputStyle={{color:'black'}}/>
+      <IconButton className="pull-right" style={{top:'12px'}} onClick={this.hideSearch.bind(this)}><IconClose color="black"/></IconButton>
+    </div>
+  )
+
+  return (
+    <header>
+      <AppBar
+        id="main-bar"
+        title={mainBar}
+        showMenuIconButton={false}
+        style={{position:'fixed'}}
+      />
+      <AppBar
+        title={searchBar}
+        className={this.state.searchBarClassName}
+        id="search-bar"
+        showMenuIconButton={false}
+      />
+    </header>
+  );
+}
+}
+
+export default withRouter(Header);

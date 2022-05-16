@@ -5,7 +5,12 @@ window.data = {
       biography: "Kigali Rwanda",
       followers: "625",
       following: "189",
+      userId: 274836879,
       profilePicture: "/images/avatar/beyonce.jpg",
+      numPosts: 808,
+		  website: "",
+		  lastPost: "01/09/2018",
+		  email: "No email in bio"
     },
     suggestions: [
       {
@@ -68,6 +73,7 @@ window.data = {
 		    lastPost: "06/09/2018",
 		    email : "No email in bio"
       },
+      
     ]
   }
 }

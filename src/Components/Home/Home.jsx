@@ -3,6 +3,9 @@ import HomeUserProfile from './HomeUserProfile'
 import HomeFollow from './HomeFollow'
 
 class Home extends Component {
+  constructor(props){
+    super(props);
+  }
   render() {
     return (
       <div className="container main-content">
@@ -11,7 +14,7 @@ class Home extends Component {
             <HomeUserProfile/>
           </div>
           <div className="col-sm-6">
-            <HomeFollow/>
+            <HomeFollow users = {this.props.users}/>
           </div>
         </div>
       </div>

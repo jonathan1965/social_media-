@@ -5,7 +5,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import './App.css';
 import './css/bootstrap-grid.css';
 import './data'
-import './follower-suggestions.json'
+import data from './follower-suggestions.json'
 
 class App extends Component {
  
@@ -14,7 +14,7 @@ class App extends Component {
       <MuiThemeProvider>
         <div className="content-wrapper">
           <Header/>
-          <Home/>
+          <Home users={data}/>
         </div>
       </MuiThemeProvider>
     );
